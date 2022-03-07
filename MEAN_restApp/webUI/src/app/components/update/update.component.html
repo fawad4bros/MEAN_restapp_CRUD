@@ -1,0 +1,34 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Uptade Item</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="updateItemForm" (submit)="updateItem()" class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <mat-label>{{getItemTitle}}</mat-label>
+          <input formControlName="title" matInput placeholder="Item Title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>{{getItemName}}</mat-label>
+          <input formControlName="name" matInput placeholder="Item Name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>{{getItemPrice}}</mat-label>
+          <input formControlName="price" matInput placeholder="Item Price">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>{{getItemDescription}}</mat-label>
+          <input formControlName="description" matInput placeholder="Item Description">
+        </mat-form-field>
+        <mat-slide-toggle formControlName="featured" class="example-margin">
+                 featured
+        </mat-slide-toggle>
+        <input type="file" (change)="onFileSelected($event)" >
+          <img class="image" mat-card-image src={{getItemImagePath}} alt="Photo of a Shiba Inu">
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block">Update Item</button>
+    </form>
+  </mat-card>
+
+</div>

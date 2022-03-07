@@ -1,0 +1,32 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Create Item Record</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="uploadItemForm" (submit)="uploadItem()" class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input formControlName="id" matInput placeholder="id">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input formControlName="title" matInput placeholder="Item Title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input formControlName="name" matInput placeholder="Item Name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input formControlName="price" matInput placeholder="Item Price">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input formControlName="description" matInput placeholder="Item Description">
+        </mat-form-field>
+        <mat-slide-toggle formControlName="featured" class="example-margin">
+                 featured
+        </mat-slide-toggle>
+        <input type="file" (change)="onFileSelected($event)" >
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block">Create Item</button>
+    </form>
+  </mat-card>
+
+</div>

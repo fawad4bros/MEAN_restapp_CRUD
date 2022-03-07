@@ -1,0 +1,17 @@
+<div *ngIf="items" fxLayout.xs="column" fxLayout="row wrap" fxLayoutGap="10px" ngClass.gt-xs="ml-10">
+<mat-card *ngFor="let item of items" fxFlex.sm="0 1 calc(50%-10px)" fxFlex.md="0 1 calc(33%-10px)" fxFlex.gt-md="0 1 calc(25%-10px)">
+  <mat-card-header>
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.price}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{item.imagePath}} alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      {{item.description}}
+    </p>
+  </mat-card-content>
+<button (click)="viewItem(item.id)" mat-fab class="button" color="primary">
+  <mat-icon>remove_red_eye</mat-icon>
+</button>
+</mat-card>
+</div>
